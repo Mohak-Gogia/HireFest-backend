@@ -1,0 +1,47 @@
+﻿@{
+	ViewBag.Title = "HireFest Signup";
+	Layout = "~/Views/_LayoutPage1.cshtml";
+	string validate= @"[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$";
+}
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<section class="w3l-hotair-form">
+		<h1>HireFest Signup</h1>
+		<div class="container">
+			<div class="workinghny-form-grid">
+				<div class="main-hotair">
+					<div class="content-wthree">
+						<h2>Create an account</h2>
+						<div class="sub-main">
+							<form action="@Url.Action("SaveInDb", "Auth")" method="post">
+								<input placeholder="First Name" name="FName" class="name" type="text" minlength="2" required="" autofocus>
+
+								<input placeholder="Last Name" name="LName" class="name" type="text" minlength="2" required="" autofocus>
+
+								<input placeholder="Phone Number" name="PhnNum" class="number" type="text" pattern="[789][0-9]{9}" maxlength="10" title="Please enter exactly 10 digits" required="" autofocus>
+
+								<input placeholder="Email Id" name="email" class="email" type="email" pattern=@validate title="Please enter a valid id" required="" autofocus>
+
+								<input placeholder="Password" name="Password" class="pass" type="password" minlength="6" required="" autofocus>
+								
+								<br />
+								<br />
+								<button class="btn" type="submit">Sign Up</button>
+							</form>
+						</div>
+					</div>
+					<div class="w3l_form align-self" style="background-color:white">
+						<div class="left_grid_info">
+							<img src="~/Images/2.png" alt="" class="img-fluid">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
